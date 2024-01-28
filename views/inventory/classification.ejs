@@ -1,0 +1,15 @@
+<%# The title describes the content of the view%>
+
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+
+<%# messages() %>
+
+
+<%#Line 1 - An EJS code block with an "unescaped" indicator —. 
+This allows HTML to be displayed. Remember our grid variable contains 
+HTML.%>
+<%- grid %>
