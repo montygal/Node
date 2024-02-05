@@ -22,7 +22,8 @@ Util.getNav = async function (req, res, next) {
   })
   list += "</ul>"
   return list
-}
+};
+
 
 /* **************************************
 * Build the classification view HTML

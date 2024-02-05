@@ -1,11 +1,12 @@
 const pool = require("../database/")
-
+const invModel = {}
 /* ***************************
  *  Get all classification data
  * ************************** */
-async function getClassifications(){
+invModel.getClassifications = async function () {
   return await pool.query("SELECT * FROM public.classification ORDER BY classification_name")
 }
+
 
 /* ***************************
  *  Get all inventory items and classification_name by classification_id
@@ -29,16 +30,20 @@ async function getInventoryByClassificationId(classification_id) {
 async function getInventoryByInventoryId(inv_id) {
   try {
     const data = await pool.query(
-      `SELECT * FROM public.inventory WHERE inv_id = $1`,
+      `SELECT * FROM public.inventory AS i 
+      WHERE i.inv_id = $1`,
       [inv_id]
     )
     return data.rows
   } catch (error) {
-    console.error("getInventoryByid error " + error)
+    console.error("getInventoryByInvId error " + error)
   }
 }
 
 
 
-module.exports = {getClassifications, getInventoryByClassificationId, getInventoryByInventoryId};
-
+module.exports = {
+  getClassifications,
+  getInventoryByClassificationId,
+  getInventoryByInventoryId
+};
