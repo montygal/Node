@@ -21,5 +21,5 @@ WHERE classification_name = 'Sport';
 UPDATE inventory
 SET inv_image = REPLACE(inv_image, '/image', '/image/vehicles');
 UPDATE inventory
-SET inv_thumbnail = REPLACE(inv_thumbnail, '/image', '/image/vechicles');
+SET inv_thumbnail = REPLACE(inv_thumbnail, '/image', '/image/vehicles');
 

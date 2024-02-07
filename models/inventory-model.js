@@ -3,7 +3,7 @@ const invModel = {}
 /* ***************************
  *  Get all classification data
  * ************************** */
-invModel.getClassifications = async function () {
+const getClassifications = async function () {
   return await pool.query("SELECT * FROM public.classification ORDER BY classification_name")
 }
 
